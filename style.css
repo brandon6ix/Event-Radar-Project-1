@@ -1,16 +1,32 @@
 :root .card {
-    background-color: rgb(172, 201, 245);
+    background: rgb(195,97,34);
+    background: linear-gradient(0deg, rgba(195,97,34,1) 0%, rgba(253,187,45,1) 100%);
     border-radius: 0px;
 }
 
 :root .card-header {
-    padding: 10px;
+    display: flex;
+    flex: wrap;
+    align-items: center;
+    padding: 15px;
     border-top-left-radius: 0px;
 }
 
 :root p {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: black;
-    font-size: 30px;
+    font-size: 35px;
+    padding-right: 20px;
 }
 
+:root header nav ul {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-size: 15px;
+}
+
+:root a {
+    color: rgb(46, 54, 16);
+}
