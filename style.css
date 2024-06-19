@@ -1,0 +1,16 @@
+:root .card {
+    background-color: rgb(172, 201, 245);
+    border-radius: 0px;
+}
+
+:root .card-header {
+    padding: 10px;
+    border-top-left-radius: 0px;
+}
+
+:root p {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    font-size: 30px;
+}
+
