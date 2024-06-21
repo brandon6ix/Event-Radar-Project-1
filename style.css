@@ -14,7 +14,7 @@
 
 :root p {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 35px;
     padding-right: 20px;
 }

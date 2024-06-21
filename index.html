@@ -4,15 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Radar</title>
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
-
-
 <body>
     <div class="card">
         <header class="card-header">
@@ -22,37 +17,35 @@
                 <i class="fa-solid fa-umbrella"></i>
                 <i class="fa-solid fa-snowflake"></i>
             </p>
-                <div class="navbar-end">
-                    <nav>
-                        <ul>
-                            <li><a href="#City">City</a></li>
-                            <li><a href="#Weather">Weather</a></li>
-                            <li><a href="#Events">Events</a></li>
-                        </ul>
-                    </nav>
-                </div>
+            <div class="navbar-end">
+                <nav>
+                    <ul>
+                        <li><a href="#City">City</a></li>
+                        <li><a href="#Weather">Weather</a></li>
+                        <li><a href="#Events">Events</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
     </div>
-    <section class="section">
+    <section id="SearchBar">
         <div class="container">
             <h1 class="title">Search for Events</h1>
             <form id="searchForm" class="box">
                 <div class="field">
                     <label class="label" for="city">Enter City:</label>
                     <div class="control">
-                        <input class="input" type="text" id="cityInput" name="city" required>
+                        <input class="input" type="text" id="city" name="city" required>
                     </div>
                 </div>
                 <div class="control">
-                    <button id="getWeatherBtn" class="button is-primary" type="button">Search</button>
+                    <button class="button is-primary" type="submit">Search</button>
                 </div>
             </form>
-            <div id="weatherInfo" class="content"></div>
+            <div id="results" class="content"></div>
         </div>
     </section>
 
     <script src="script.js"></script>
 </body>
-
-
 </html>
