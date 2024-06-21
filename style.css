@@ -18,7 +18,7 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     display: inline;
     align-items: center;
-    color: black;
+    color: rgb(251, 251, 251);
     font-size: 24px;
 }
 
@@ -32,6 +32,10 @@
 }
 
 :root a {
-    color: rgb(46, 54, 16);
+    color: rgb(45, 24, 24);
 }
 
+:root .container {
+    margin: 25px;
+    width: auto;
+}
