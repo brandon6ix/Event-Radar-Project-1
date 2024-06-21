@@ -19,6 +19,7 @@ function getWeather(city) {
     })
     .then(data => {
       const temperatureFahrenheit = kelvinToFahrenheit(data.main.temp);
+      const weatherDescription = data.weather[0].description.toLowerCase();
 
       const weatherInfo = `
         <div class="box">
@@ -30,6 +31,19 @@ function getWeather(city) {
         </div>
       `;
       document.getElementById('results').innerHTML = weatherInfo;
+
+      let suggestion = '';
+                if (weatherDescription.includes('rain')) {
+                    suggestion = "Make sure to bring an umbrella!";
+                } else if (weatherDescription.includes('clear')) {
+                    suggestion = "Stay hydrated!";
+                } else if (weatherDescription.includes('cloud')) {
+                    suggestion = "You might want to bring some layers!";
+                } else {
+                    suggestion = "Consider preparing appropriately for the weather.";
+                }
+
+                document.getElementById('weatherSuggestion').innerHTML = `<p><strong>Suggestion:</strong> ${suggestion}</p>`;
 
       getEvents(city);
     })
