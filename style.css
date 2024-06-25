@@ -1,12 +1,13 @@
 body {
     background-color: rgb(73, 69, 69);
-    height: 100vh;
+    height: auto;
 }
 
 :root {
     h1 {
         font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         color: white;
+        font-size: 30px;
     }
     p {
         font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -14,6 +15,11 @@ body {
     a {
         font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
+}
+
+.icons {
+    color: rgb(0, 0, 0);
+    font-size: 25px;
 }
 
 :root .card {
@@ -42,6 +48,7 @@ body {
     justify-content: center;
     gap: 8px;
     font-size: 14px;
+    padding-left: 15px;
 }
 
 :root a {
@@ -51,22 +58,10 @@ body {
 :root .container {
     margin: 25px;
     width: auto;
+    
 }
 
-:root #wrapper {
-    display: flex;
-    flex: wrap;
-    margin: 10px;
-}
 
 :root .button.is-primary {
     background-color: rgb(167, 167, 167);
 }
-
-
-.rubik-.font {
-    font-family: "Rubik", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-  }
