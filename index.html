@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Radar</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <div class="card">
         <header class="card-header">
@@ -30,6 +33,7 @@
         </header>
     </div>
     <section id="SearchBar">
+
         <div class="container">
             <h1 id="Events" class="title">Search for Events</h1>
             <form id="searchForm" class="box">
@@ -40,14 +44,26 @@
                     </div>
                 </div>
                 <div class="control">
-                    <button class="button is-primary" type="submit">Search</button>
-                    <div id="weatherSuggestion" class="notification"></div>
+                    <button class="button is-primary" id="opener" type="submit">Search</button>
+                    <div class="notification"></div>
                 </div>
             </form>
             <div id="results" class="content"></div>
         </div>
     </section>
 
+    <div id="dialog" title="Your Weather Suggestion is:">
+        <p id="weatherSuggestion">
+        </p>
+        
+    </div>
+    <div>
+    <!-- <button id="opener">Open Dialog</button> -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
