@@ -3,6 +3,9 @@
 const weatherApiKey = '7ef83d28280d127f242c2a20cdb05f1a';
 const ticketmasterApiKey = 'l7lnMA4sPyZXAkzgQqjbeBHIB7D6cnl5'; 
 
+let cities = JSON.parse(localStorage.getItem('cities')) || [];
+
+
 function kelvinToFahrenheit(kelvin) {
   return (kelvin - 273.15) * 9 / 5 + 32;
 }
@@ -95,8 +98,87 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
   const city = document.getElementById('city').value.trim();
   if (city) {
     getWeather(city);
+cities.push(city)
+localStorage.setItem('cities',JSON.stringify(cities)) 
+
   } else {
     alert('Please enter a city name');
   }
 });
+
+const citiesInput = document.querySelector('#city');
+const citiesList = document.querySelector('#cities-List');
+
+
+function renderCities() {
+  
+  citiesList.innerHTML = '';
+
+
+  for (let i = 0; i < cities.length; i++) {
+     cities = cities[i];
+
+    const li = document.createElement('li');
+    li.textContent = cities;
+    li.setAttribute('data-index', i);
+
+    const button = document.createElement('button');
+    button.textContent = 'Complete ✔️';
+
+    li.appendChild(button);
+    citiesList.appendChild(li);
+  }
+}
+
+
+function init() {
+
+  const storedCities = JSON.parse(localStorage.getItem('cities'));
+
+  if (storedCities !== null) {
+    cities = storedCities;
+  }
+  renderCities();
+}
+
+function storeCities() {
+  
+  localStorage.setItem('cities', JSON.stringify(cities));
+}
+const citiesForm = document.getElementById('searchForm')
+citiesForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+
+
+  if (citiesText === '') {
+    return;
+  }
+
+  
+  cities.push(citiesText);
+  citiesInput.value = '';
+
+ 
+  storeCities();
+  renderCities();
+});
+
+
+citiesList.addEventListener('click', function (event) {
+  const element = event.target;
+
+  if (element.matches('button') === true) {
+   
+    const index = element.parentElement.getAttribute('data-index');
+    cities.splice(index, 1);
+
+   
+    storeCities();
+    renderCities();
+  }
+});
+
+
+init();
 
