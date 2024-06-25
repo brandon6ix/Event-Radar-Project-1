@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Radar</title>
     <script src="https://kit.fontawesome.com/4e310c3c46.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
-<body class="font">
+<body></body>
     <div class="card">
         <header class="card-header">
             <p class="card-header-title">Event Radar</p>
-            <div>
+            <div class="icons">
                 <i class="fa-solid fa-cloud"></i>
                 <i class="fa-solid fa-bolt"></i>
                 <i class="fa-regular fa-sun"></i>
@@ -22,7 +21,7 @@
             <div class="navbar-end">
                 <nav>
                     <ul>
-                        <li><a href="#City">City</a></li>
+                        <li><a href="#City">Enter City</a></li>
                         <li><a href="#Weather">Weather</a></li>
                         <li><a href="#Events">Events</a></li>
                     </ul>
@@ -33,19 +32,23 @@
     <section id="SearchBar">
         <div class="container">
             <h1 class="title">Search for Events</h1>
-            <form id="searchForm" class="box">
-                <div id="City" class="field">
-                    <label class="label" for="city">Enter City:</label>
-                    <div class="control">
-                        <input class="input" type="text" id="city" name="city" required>
+            <div class="flex">
+                <form id="searchForm" class="box">
+                    <div id="City" class="field">
+                        <label class="label" for="city">Enter City:</label>
+                        <div class="control">
+                            <input class="input" type="text" id="city" name="city" required>
+                        </div>
                     </div>
-                </div>
-                <div class="control">
-                    <button class="button is-primary" type="submit">Search</button>
-                    <div id="weatherSuggestion" class="notification"></div>
-                </div>
-            </form>
-            <div id="results" class="content"></div>
+                    <div class="control">
+                        <button class="button is-primary" type="submit">Search</button>
+                        <div id="weatherSuggestion" class="notification"></div>
+                    </div>
+                </form>
+                    <div id="Weather">
+                        <div id="results" class="content"></div>
+                    </div>
+            </div>
         </div>
     </section>
 
