@@ -37,9 +37,8 @@ body {
 }
 
 :root p {
-    display: inline;
     align-items: center;
-    font-size: 24px;
+    font-size: 25px;
 }
 
 
