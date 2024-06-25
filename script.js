@@ -3,6 +3,8 @@
 const weatherApiKey = '7ef83d28280d127f242c2a20cdb05f1a';
 const ticketmasterApiKey = 'l7lnMA4sPyZXAkzgQqjbeBHIB7D6cnl5'; 
 
+
+
 function kelvinToFahrenheit(kelvin) {
   return (kelvin - 273.15) * 9 / 5 + 32;
 }
@@ -31,7 +33,7 @@ function getWeather(city) {
         </div>
       `;
       document.getElementById('results').innerHTML = weatherInfo;
-
+      
       let suggestion = '';
                 if (weatherDescription.includes('rain')) {
                     suggestion = "Make sure to bring an umbrella!";
@@ -42,8 +44,8 @@ function getWeather(city) {
                 } else {
                     suggestion = "Consider preparing appropriately for the weather.";
                 }
-
-                document.getElementById('weatherSuggestion').innerHTML = `<p><strong>Suggestion:</strong> ${suggestion}</p>`;
+                //  
+                document.getElementById('weatherSuggestion').innerHTML = `<p> ${suggestion}</p>`;
 
       getEvents(city);
     })
@@ -92,11 +94,31 @@ function getEvents(city) {
 
 document.getElementById('searchForm').addEventListener('submit', function (e) {
   e.preventDefault();
+  
   const city = document.getElementById('city').value.trim();
+  $( ".selector" ).dialog( "option", "modal", true );
   if (city) {
     getWeather(city);
   } else {
     alert('Please enter a city name');
   }
 });
+
+$( function() {
+  $( "#dialog" ).dialog({
+    autoOpen: false,
+    show: {
+      effect: "blind",
+      duration: 1000
+    },
+    hide: {
+      effect: "explode",
+      duration: 1000
+    }
+  });
+
+  $( "#opener" ).on( "click", function() {
+    $( "#dialog" ).dialog( "open" );
+  });
+} );
 

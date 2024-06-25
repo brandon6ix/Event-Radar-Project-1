@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Radar</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
     <script src="https://kit.fontawesome.com/4e310c3c46.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="./style.css">
@@ -30,6 +32,7 @@
         </header>
     </div>
     <section id="SearchBar">
+
         <div class="container">
             <h1 class="title">Search for Events</h1>
             <div class="flex">
@@ -41,8 +44,8 @@
                         </div>
                     </div>
                     <div class="control">
-                        <button class="button is-primary" type="submit">Search</button>
-                        <div id="weatherSuggestion" class="notification"></div>
+                        <button class="button is-primary" id="opener" type="submit">Search</button>
+                        <div  class="notification"></div>
                     </div>
                 </form>
                     <div id="Weather">
@@ -52,7 +55,19 @@
         </div>
     </section>
 
+    <div id="dialog" title="Your Weather Suggestion is:">
+        <p id="weatherSuggestion">
+        </p>
+        
+    </div>
+    <div>
+    <!-- <button id="opener">Open Dialog</button> -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/4e310c3c46.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
