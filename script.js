@@ -3,6 +3,7 @@
 const weatherApiKey = '7ef83d28280d127f242c2a20cdb05f1a';
 const ticketmasterApiKey = 'l7lnMA4sPyZXAkzgQqjbeBHIB7D6cnl5'; 
 
+let cities = JSON.parse(localStorage.getItem('cities')) || [];
 
 
 function kelvinToFahrenheit(kelvin) {
@@ -99,11 +100,86 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
   $( ".selector" ).dialog( "option", "modal", true );
   if (city) {
     getWeather(city);
+    console.log (cities)
+    console.log(city)
+
+cities.push(city)
+localStorage.setItem('cities',JSON.stringify(cities)) 
+
   } else {
     alert('Please enter a city name');
   }
 });
 
+const citiesInput = document.querySelector('#city');
+const citiesList = document.querySelector('#cities-List');
+
+
+function renderCities() {
+  
+  citiesList.innerHTML = '';
+
+
+  for (let i = 0; i < cities.length; i++) {
+     city = cities[i];
+
+    const li = document.createElement('li');
+    li.textContent = city;
+    li.setAttribute('data-index', i);
+
+    
+
+    // li.appendChild(button);
+    citiesList.appendChild(li);
+  }
+}
+
+
+function init() {
+
+  const storedCities = JSON.parse(localStorage.getItem('cities'));
+
+  if (storedCities !== null) {
+    cities = storedCities;
+  }
+  renderCities();
+}
+
+function storeCities() {
+  
+  localStorage.setItem('cities', JSON.stringify(cities));
+}
+const citiesForm = document.getElementById('searchForm')
+citiesForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  
+
+  citiesInput.value = '';
+
+ 
+  storeCities();
+  renderCities();
+});
+
+
+citiesList.addEventListener('click', function (event) {
+  const element = event.target;
+
+  if (element.matches('button') === true) {
+   
+    const index = element.parentElement.getAttribute('data-index');
+    const tempcities = cities
+    tempcities.splice(index, 1)
+
+   
+    storeCities();
+    renderCities();
+  }
+});
+
+
+init();
 $( function() {
   $( "#dialog" ).dialog({
     autoOpen: false,
