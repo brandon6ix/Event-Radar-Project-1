@@ -122,8 +122,7 @@ function renderCities() {
     li.textContent = cities;
     li.setAttribute('data-index', i);
 
-    const button = document.createElement('button');
-    button.textContent = 'Complete ✔️';
+    
 
     li.appendChild(button);
     citiesList.appendChild(li);
@@ -151,12 +150,8 @@ citiesForm.addEventListener('submit', function (event) {
 
 
 
-  if (citiesText === '') {
-    return;
-  }
-
   
-  cities.push(citiesText);
+
   citiesInput.value = '';
 
  
@@ -171,7 +166,7 @@ citiesList.addEventListener('click', function (event) {
   if (element.matches('button') === true) {
    
     const index = element.parentElement.getAttribute('data-index');
-    cities.splice(index, 1);
+    cities.splice(index, 1)
 
    
     storeCities();
