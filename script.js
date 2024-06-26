@@ -34,7 +34,7 @@ function getWeather(city) {
         </div>
       `;
       document.getElementById('results').innerHTML = weatherInfo;
-
+      
       let suggestion = '';
                 if (weatherDescription.includes('rain')) {
                     suggestion = "Make sure to bring an umbrella!";
@@ -45,8 +45,8 @@ function getWeather(city) {
                 } else {
                     suggestion = "Consider preparing appropriately for the weather.";
                 }
-
-                document.getElementById('weatherSuggestion').innerHTML = `<p><strong>Suggestion:</strong> ${suggestion}</p>`;
+                //  
+                document.getElementById('weatherSuggestion').innerHTML = `<p> ${suggestion}</p>`;
 
       getEvents(city);
     })
@@ -95,9 +95,14 @@ function getEvents(city) {
 
 document.getElementById('searchForm').addEventListener('submit', function (e) {
   e.preventDefault();
+  
   const city = document.getElementById('city').value.trim();
+  $( ".selector" ).dialog( "option", "modal", true );
   if (city) {
     getWeather(city);
+    console.log (cities)
+    console.log(city)
+
 cities.push(city)
 localStorage.setItem('cities',JSON.stringify(cities)) 
 
@@ -116,15 +121,15 @@ function renderCities() {
 
 
   for (let i = 0; i < cities.length; i++) {
-     cities = cities[i];
+     city = cities[i];
 
     const li = document.createElement('li');
-    li.textContent = cities;
+    li.textContent = city;
     li.setAttribute('data-index', i);
 
     
 
-    li.appendChild(button);
+    // li.appendChild(button);
     citiesList.appendChild(li);
   }
 }
@@ -164,7 +169,8 @@ citiesList.addEventListener('click', function (event) {
   if (element.matches('button') === true) {
    
     const index = element.parentElement.getAttribute('data-index');
-    cities.splice(index, 1)
+    const tempcities = cities
+    tempcities.splice(index, 1)
 
    
     storeCities();
@@ -174,4 +180,21 @@ citiesList.addEventListener('click', function (event) {
 
 
 init();
+$( function() {
+  $( "#dialog" ).dialog({
+    autoOpen: false,
+    show: {
+      effect: "blind",
+      duration: 1000
+    },
+    hide: {
+      effect: "explode",
+      duration: 1000
+    }
+  });
+
+  $( "#opener" ).on( "click", function() {
+    $( "#dialog" ).dialog( "open" );
+  });
+} );
 
