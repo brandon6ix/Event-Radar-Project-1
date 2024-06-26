@@ -148,8 +148,6 @@ const citiesForm = document.getElementById('searchForm')
 citiesForm.addEventListener('submit', function (event) {
   event.preventDefault();
 
-
-
   
 
   citiesInput.value = '';
