@@ -69,7 +69,7 @@ function getEvents(city) {
     .then(data => {
       if (data._embedded && data._embedded.events.length > 0) {
         const events = data._embedded.events;
-        let eventsInfo = `<div class="box"><h2 class="title is-4">Events in ${city}</h2></div>`;
+        let eventsInfo = '';
 
         events.forEach(event => {
           eventsInfo += `
@@ -82,16 +82,17 @@ function getEvents(city) {
           `;
         });
 
-        document.getElementById('results').innerHTML += eventsInfo;
+        document.getElementById('events-content').innerHTML = eventsInfo; // Replace with this line to append events to #events-content
       } else {
-        document.getElementById('results').innerHTML += '<p class="has-text-warning">No events found</p>';
+        document.getElementById('events-content').innerHTML = '<p class="has-text-warning">No events found</p>';
       }
     })
     .catch(error => {
       console.error('There was a problem fetching the event data:', error);
-      document.getElementById('results').innerHTML += '<p class="has-text-danger">Failed to fetch event data</p>';
+      document.getElementById('events-content').innerHTML = '<p class="has-text-danger">Failed to fetch event data</p>';
     });
 }
+
 
 document.getElementById('searchForm').addEventListener('submit', function (e) {
   e.preventDefault();
