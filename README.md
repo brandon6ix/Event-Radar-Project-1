@@ -21,8 +21,14 @@ No special instructions to run the program. Enter the zip code into the input bo
 
 ## License
 
+    M.I.T License
+
 ## screenhots
+
+![alt text](<Screenshot (12).png>)
 
 ## Links
 
-    Github:
+    Github:  https://github.com/brandon6ix/Event-Radar-Project-1
+
+    Web:
