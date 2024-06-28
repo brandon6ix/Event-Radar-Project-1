@@ -64,8 +64,3 @@ body {
 :root .button.is-primary {
     background-color: rgb(167, 167, 167);
 }
-
-:root #cities-list li {
-    display: flex;
-    
-}
