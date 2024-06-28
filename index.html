@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Radar</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <script src="https://kit.fontawesome.com/4e310c3c46.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
-<body>
+<body></body>
+    <div class="card">
+        <header class="card-header">
+            <p class="card-header-title">Event Radar</p>
+            <div class="icons">
+                <i class="fa-solid fa-cloud"></i>
+                <i class="fa-solid fa-bolt"></i>
+                <i class="fa-regular fa-sun"></i>
+                <i class="fa-regular fa-snowflake"></i>
+            </div>
+            <div class="navbar-end">
+                <nav>
+                    <ul>
+                        <li><a href="#City">Enter City</a></li>
+                        <li><a href="#Weather">Weather</a></li>
+                        <li><a href="#Events">Events</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <section id="SearchBar">
 
+        <div class="container">
+            <h1 class="title">Search for Events</h1>
+            <div class="flex">
+                <form id="searchForm" class="box">
+                    <div id="City" class="field">
+                        <label class="label" for="city">Enter City:</label>
+                        <div class="control">
+                            <input class="input" type="text" id="city" name="city" required>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <button class="button is-primary" id="opener" type="submit">Search</button>
+                        <div  class="notification"></div>
+                    </div>
+                </form>
+                <div id="cities-List"> </div>
+                    <div id="Weather">
+                        <div id="results" class="content"></div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="dialog" title="Your Weather Suggestion is:">
+        <p id="weatherSuggestion">
+        </p>
+        
+    </div>
+    <div>
+    <!-- <button id="opener">Open Dialog</button> -->
+    </div>
     
+    <section id="Events" class="section">
+        <div class="container">
+            <h2 class="title">Events</h2>
+            <div id="events-content" class="content">
+                <!-- Events will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <script src="https://kit.fontawesome.com/4e310c3c46.js" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
